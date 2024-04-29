@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my canvas</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+            }
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+  @media (max-width: 640px) {
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .tools-board
+    {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      height: 100px;
+      width: 100%;
+      margin-left: 0%;
+      margin-top: 5px;
+    }
+    .img
+    {
+      width: -10px;
+    }
+    
+    #canvas
+    {
+      margin-left: 10px;
+      width:90%;
+      height: 500px;
+    }
+    #brush
+    {
+      width:100px;
+     
+    }
+    
+    
+    .options
+    {
+      position: relative;
+      display: flex;
+      
+    }
+    #stroke
+    {
+      width: 40px;
+      margin-top: 35px;
+      margin-left: 70px;
+    }
+    #size-slider
+    {
+      margin-top: -25px;
+      margin-left: 110px;
+      width: 90px;
+    }
+    #clear
+    {
+      width:80px;
+      margin-left: 150px;
+      margin-top: 40px;
+    }
+    #save
+    {
+      width: 80px;
+    }
+  }
+    
+    
+    
+    
+    
+  
+    </style>
+    
+    
+  </head>
+  <body class="bg-[url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm00OTQtYmctMDI1YS1remMzNXdjbS5qcGc.jpg')] h-screen w-full">
+  
+
+    
+    <div class=" container flex">
+      <section class=" tools-board bg-white  ml-12 mt-24 h-[450px] 
+      " >
+      <div >
+        <a href="../frontpage/front.html">
+          <img src="../frontpage/house-solid.jpg" class="w-8 mb-6   ml-16 mt-4 ">
+        </a>
+      </div>
+          <div class="row w-40 ">
+          <label class=" title ml-10 text-xl">Options</label>
+          <ul class="options">
+      
+            <li id="brush" class="option active tool cursor-pointer border-stone-700 relative border rounded px-4 py-2 text-l w-[129px] h-12 mt-4 font-bold before:bg-stone-700 hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 flex ml-3 ">
+              <img src="https://cdn-icons-png.flaticon.com/512/999/999740.png" class="h-3 mt-2">
+              <div class="ml-2">Brush</div>
+            </li>
+
+            <li id="eraser" class="option tool cursor-pointer border-stone-700 relative border rounded px-4 py-2 text-l w-[129px] h-12 mt-2 font-bold before:bg-stone-700 hover:rounded-b-none before:absolute before:-bottom-0 before:-left-0  before:block before:h-[4px] before:w-full before:origin-bottom-right before:scale-x-0 before:transition before:duration-300 before:ease-in-out hover:before:origin-bottom-left hover:before:scale-x-100 flex ml-3 ">
+              <img src="https://cdn-icons-png.flaticon.com/512/1827/1827954.png" class="mt-2">
+              <div class="ml-2 mt-1" id="eraser2">Eraser</div>
+
+            </li>
+            </button>
+            <li id="" class="options ml-2 mt-6">
+              <input type="range" id="size-slider" min="1" max="30" vlaue="5" class="cursor-pointer ">
+            
+            </li>
+            
+        </div>
+        <div id="row" class="ml-3" >
+          <input id="stroke" name="stroke" type="color" class="h-11 w-12 mt-4 ml-10 cursor-pointer">
+        </div>
+        <div id="row">
+          <button id="clear" class="bg-stone-700 rounded-full w-32 ml-2 mt-4 text-white">Clear</button>
+          <button id="save" class="bg-stone-700 rounded-full w-32 ml-2 mt-4 text-white">Save</button>
+        </div>
+      </section>
+        <canvas id="canvas" class="ml-24  flex bg-white h-[580px] w-[1000px] mt-10"></canvas>
+    </div>
+    </div>
+
+  </body>
+</html>
